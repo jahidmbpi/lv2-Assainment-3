@@ -55,6 +55,7 @@ borrowRoutes.post("/", async (req, res, next) => {
       data: postToBorrowData,
     });
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       sucess: false,
       messgae: `Error message is ${error}`,

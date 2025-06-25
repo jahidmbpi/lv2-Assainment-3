@@ -5,8 +5,9 @@ import { globalErrorHandler } from "./middleware/error";
 
 const app: Application = express();
 app.use(express.json());
-app.use("/books", bookRouters);
-app.use("/borr", borrowRoutes);
+
+app.use("/api/books", bookRouters);
+app.use("/api/borrow", borrowRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("hello world libery is open now ");

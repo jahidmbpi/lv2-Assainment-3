@@ -8,6 +8,7 @@ bookRouters.post(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const body = req.body;
+      console.log(body);
       const data = await Book.create(body);
 
       res.status(201).json({
@@ -16,6 +17,7 @@ bookRouters.post(
         data,
       });
     } catch (error) {
+      // console.log(error);
       next(error);
     }
   }
