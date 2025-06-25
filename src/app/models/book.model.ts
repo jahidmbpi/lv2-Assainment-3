@@ -1,4 +1,4 @@
-import { model, Schema, version } from "mongoose";
+import { model, Schema } from "mongoose";
 import { IBook } from "../interface/book.interface";
 
 // তারপর schema:

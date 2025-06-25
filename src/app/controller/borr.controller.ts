@@ -14,7 +14,7 @@ const borrowZodSchema = z.object({
   dueDate: z.string({ required_error: "Due date is required" }),
 });
 
-borrowRoutes.post("/", async (req, res, next) => {
+borrowRoutes.post("/", async (req, res, _next) => {
   try {
     const {
       book: bookId,
@@ -63,7 +63,7 @@ borrowRoutes.post("/", async (req, res, next) => {
   }
 });
 
-borrowRoutes.get("/", async (req, res, next) => {
+borrowRoutes.get("/", async (_req, res, next) => {
   try {
     const summary = await Borrow.aggregate([
       {
