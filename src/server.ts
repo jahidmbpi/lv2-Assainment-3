@@ -11,7 +11,7 @@ const port = 5000;
 async function main() {
   try {
     await mongoose.connect(
-      `mongodb+srv://oaNKn0015n8Cf8yV:assainment-3@cluster0.g8zp6.mongodb.net/libaryDb`
+      `mongodb+srv://assign:FenUtxsOXQQBaruq@cluster0.g8zp6.mongodb.net/libaryDb`
     );
     console.log("connected to mongoose using mongoose");
     server.listen(port, () => {
