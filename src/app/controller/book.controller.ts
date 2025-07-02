@@ -22,6 +22,21 @@ bookRouters.post(
     }
   }
 );
+bookRouters.get(
+  "/getbook",
+  async (_: Request, res: Response, next: NextFunction) => {
+    try {
+      const data = await Book.find();
+      res.status(200).json({
+        success: true,
+        message: "Books retrieved successfully",
+        data,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
 bookRouters.get(
   "/",
