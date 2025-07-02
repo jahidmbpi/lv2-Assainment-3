@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response } from "express";
 import { Book } from "../models/book.model";
 
 export const bookRouters = express.Router();
-
+//post book
 bookRouters.post(
   "/create-book",
   async (req: Request, res: Response, next: NextFunction) => {
@@ -22,6 +22,7 @@ bookRouters.post(
     }
   }
 );
+//get all book
 bookRouters.get(
   "/getbook",
   async (_: Request, res: Response, next: NextFunction) => {
