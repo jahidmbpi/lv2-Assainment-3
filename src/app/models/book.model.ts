@@ -1,9 +1,10 @@
 import { model, Schema } from "mongoose";
 import { IBook } from "../interface/book.interface";
 
-// তারপর schema:
 const bookSchema = new Schema<IBook>(
   {
+    name: { type: String, required: true },
+    image: { type: String, required: true },
     title: { type: String, required: true, trim: true },
     author: { type: String, required: true, trim: true },
     genre: {

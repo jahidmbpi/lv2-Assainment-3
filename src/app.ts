@@ -6,11 +6,6 @@ import cors from "cors";
 const app: Application = express();
 app.use(express.json());
 app.use(cors());
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-  })
-);
 
 app.get("/", (_req: Request, res: Response) => {
   res.send("Library is live on Vercel!");
@@ -18,11 +13,6 @@ app.get("/", (_req: Request, res: Response) => {
 
 app.use("/api/books", bookRouters);
 app.use("/api/borrow", borrowRoutes);
-
-// Remove duplicate route
-// app.get("/", (_req: Request, res: Response) => {
-//   res.send("hello world libery is open now ");
-// });
 
 app.use(globalErrorHandler);
 

@@ -10,6 +10,8 @@ export const genreList = [
 type Genre = (typeof genreList)[number];
 
 export interface IBook {
+  name: string;
+  image: string;
   title: string;
   author: string;
   genre: Genre;

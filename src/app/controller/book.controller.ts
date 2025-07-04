@@ -10,6 +10,7 @@ bookRouters.post(
       const body = req.body;
       console.log(body);
       const data = await Book.create(body);
+      console.log(data);
 
       res.status(201).json({
         success: true,
@@ -17,7 +18,7 @@ bookRouters.post(
         data,
       });
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       next(error);
     }
   }
@@ -73,6 +74,7 @@ bookRouters.get(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const bookID = req.params.bookID;
+
       const data = await Book.findById(bookID);
       res.status(201).json({
         success: true,
@@ -81,6 +83,11 @@ bookRouters.get(
       });
     } catch (error) {
       next(error);
+      res.status(400).json({
+        success: false,
+        massage: "something went wrong",
+        error,
+      });
     }
   }
 );
