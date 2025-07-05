@@ -48,6 +48,7 @@ borrowRoutes.post("/", async (req, res, _next) => {
       quantity,
       dueDate,
     });
+    console.log(postToBorrowData);
 
     res.status(201).json({
       sucess: true,
@@ -91,6 +92,7 @@ borrowRoutes.get("/", async (_req, res, next) => {
           book: {
             title: "$book.title",
             isbn: "$book.isbn",
+            name: "$book.name",
           },
           totalQuantity: 1,
         },
