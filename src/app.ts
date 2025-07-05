@@ -6,6 +6,11 @@ import cors from "cors";
 const app: Application = express();
 app.use(express.json());
 app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://assainment-4-client.vercel.app"],
+  })
+);
 
 app.get("/", (_req: Request, res: Response) => {
   res.send("Library is live on Vercel!");
